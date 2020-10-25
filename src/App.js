@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import SearchParams from "./Components/SearchParams";
 import './App.css';
+import { Router, Link } from '@reach/router';
+import Details from './Components/Details';
+import ThemeContext from './Components/ThemeContext';
 
 function App() {
+  const themeHook = useState('darkblue');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={themeHook}>
+      <div className="App">
+        <header>
+          <Link to="/"> <h1>Adopt Me!</h1> </Link>
+        </header>
+        <Router>
+        <SearchParams path="/" />
+        <Details path="/details/:id" />
+        </Router>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
