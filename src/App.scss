@@ -1,22 +1,48 @@
 * {
   box-sizing: border-box;
-  color: #333;
+  text-decoration: none;
+}
+html{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(269deg, #833ab4, #fd1d1d);
+  background-size: 400% 400%;
+
+  -webkit-animation: Gradient 18s ease infinite;
+  -moz-animation: Gradient 18s ease infinite;
+  animation: Gradient 18s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
+}
+@-moz-keyframes Gradient {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
+}
+@keyframes Gradient {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
 }
 
 body {
-  background-color: #81a69b;
-  background-image: url(http://static.frontendmasters.com/resources/2019-05-02-complete-intro-react-v5/image-background.png);
-  margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .search-params {
   width: 1100px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+  background-color: ghostwhite;
 }
 
 .search-params form {
-  background-color: #d9c148;
   width: 360px;
   margin: 0px 25px 0px 0px;
   padding: 35px 15px 15px 15px;
@@ -25,7 +51,6 @@ body {
 }
 
 .search {
-  background-color: #d9c148;
   width: 715px;
   padding: 15px;
   border-radius: 9px;
@@ -36,10 +61,11 @@ body {
 .details {
   width: 1100px;
   margin: 0 auto;
-  background-color: #d9c148;
   padding: 15px;
   border-radius: 9px;
   margin-bottom: 25px;
+  background-color: ghostwhite;
+
 }
 
 .pet {
@@ -48,7 +74,6 @@ body {
   display: block;
   overflow: hidden;
   margin: 25px 0;
-  border-bottom: #bf9b2f 1px solid;
 }
 
 .pet img {
@@ -84,40 +109,12 @@ body {
   text-overflow: ellipsis;
 }
 
-header > a,
-#root > div > h1 {
-  display: inline-block;
-  background-image: url(http://static.frontendmasters.com/resources/2019-05-02-complete-intro-react-v5/image-logo.png);
-  width: 279px;
-  height: 76px;
-  overflow: hidden;
-  text-indent: -9999px;
-}
-
 .pet h2 {
   white-space: nowrap;
   font-weight: normal;
   font-size: 20px;
   margin: 0;
   text-overflow: ellipsis;
-}
-
-header a {
-  color: #bf3334;
-  font-size: 3px;
-  text-decoration: none;
-  font-weight: bold;
-  display: block;
-  padding-bottom: 10px;
-}
-
-header {
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
-  width: 1100px;
-  margin: 0 auto;
-  padding: 20px 0px 0px 0px;
 }
 
 .details p {
@@ -143,14 +140,18 @@ header {
   align-items: center;
   height: 400px;
   margin-top: 8px;
+  flex-direction: column;
 }
 
 .carousel > img {
-  max-width: 45%;
-  max-height: 400px;
+  max-width: 50%;
+  border-radius: 8px;
+  max-height: 75%;
 }
 
 .carousel-smaller {
+  display: flex;
+  justify-content: center;
   width: 50%;
 }
 
@@ -193,6 +194,7 @@ header {
   border-radius: 5px;
   display: block;
   margin: 0 auto;
+  margin-top: 10px;
   cursor: pointer;
 }
 
@@ -266,6 +268,7 @@ header {
 
   .details {
     width: 95%;
+    height: 800px;
     margin: 0 auto;
     padding: 15px;
     border-radius: 9px;
@@ -319,4 +322,23 @@ header {
     width: 60px;
     height: 60px;
   }
+}
+header{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 2em;
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+}
+header h1{
+  color: ghostwhite;
+}
+.details-description{
+  background-color: #ba9dce;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  border-radius: 8px;
 }
